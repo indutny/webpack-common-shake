@@ -1,0 +1,31 @@
+{
+  "name": "webpack-common-shake",
+  "version": "1.0.0",
+  "description": "CommonJS Tree Shake Plugin for Webpack",
+  "main": "lib/shake.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indutny/webpack-common-shake.git"
+  },
+  "keywords": [
+    "webpack",
+    "commonjs",
+    "tree",
+    "shake"
+  ],
+  "author": "Fedor Indutny <fedor@indutny.com> (http://darksi.de/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indutny/webpack-common-shake/issues"
+  },
+  "homepage": "https://github.com/indutny/webpack-common-shake#readme",
+  "dependencies": {
+    "acorn": "^5.0.3",
+    "common-shake": "^1.0.1",
+    "webpack": "^3.0.0",
+    "webpack-sources": "^1.0.1"
+  }
+}
