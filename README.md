@@ -4,6 +4,8 @@
 
 Please file an [issue][0] if anything is broken.
 
+NOTE: `webpack` version 3 may be needed in order to run this.
+
 ## Usage
 
 Example `webpack.config.js`:
