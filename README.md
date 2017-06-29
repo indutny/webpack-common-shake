@@ -69,7 +69,8 @@ Some global (full) bailouts:
 * Dynamic use of require `require(Math.random())`
 * Dynamic import `var fn = require('./lib')[Math.random()]`
 
-If you need bailout reporting for now consider using this API:
+This plugin will print some webpack warnings. In any case, bailouts may be
+obtained programmatically too:
 
 ```js
 const plugin = new ShakePlugin({
