@@ -8,6 +8,32 @@ Please file an [issue][0] if anything is broken.
 
 NOTE: `webpack` version 3 may be needed in order to run this.
 
+## Why?
+
+There are vast amount of CommonJS modules out there. Thus CommonJS Tree Shaking
+is as important as the ESM module import/export shaking.
+
+## How?
+
+This plugin removes unused assignments to `exports` properties leaving removal
+of the (presumably) dead code to UglifyJS. If, for example, you had a module:
+
+```js
+exports.used = 1;
+var tmp = exports.unused = 2;
+```
+
+This plugin will transform it to:
+
+```js
+exports.used = 1;
+var tmp = 2;
+```
+
+It is up to UglifyJS (or some other optimizer) to decide, whether `tmp` is used
+or not and delete it. Luckily it is much simpler for it to do if the uses are
+not clouded by exporting the values.
+
 ## Usage
 
 Example `webpack.config.js`:
@@ -22,6 +48,34 @@ module.exports = [{
   },
   plugins: [ new ShakePlugin() ]
 }];
+```
+
+## Limitations
+
+Although, generally this module works and helps removing unused code from the
+bundles. There are some limitations that may prevent it from running either
+partially or completely. Some examples are provided below, otherwise please use
+common sense (or `onModuleBailout`, `onGlobalBailout` plugin options).
+
+Some local (partial) bailouts:
+
+* Dynamic exports `exports[Math.random()] = ...`
+* Overriding imported vars `var a = require('./a'); a.lib; a = require('./b')`
+* Using `require` in unknown way `console.log(require('./lib')`
+* Destructuring `require` dynamically `{ [prop]: name } = require('./a')`
+
+Some global (full) bailouts:
+
+* Dynamic use of require `require(Math.random())`
+* Dynamic import `var fn = require('./lib')[Math.random()]`
+
+If you need bailout reporting for now consider using this API:
+
+```js
+const plugin = new ShakePlugin({
+  onModuleBailout: (module, bailouts) => { ... },
+  onGlobalBailout: (bailouts) => { ... }
+});
 ```
 
 ## LICENSE
