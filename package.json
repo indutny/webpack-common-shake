@@ -1,6 +1,6 @@
 {
   "name": "webpack-common-shake",
-  "version": "1.0.0-alpha2",
+  "version": "1.0.0-alpha3",
   "description": "CommonJS Tree Shake Plugin for Webpack",
   "main": "lib/shake.js",
   "scripts": {
