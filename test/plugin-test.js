@@ -78,7 +78,8 @@ describe('webpack-common-shake', () => {
   it('should remove unused exports of `unused-module-exports.js`', (cb) => {
     compile('unused-module-exports.js', (err, file, extra) => {
       assert.ok(!err);
-      assert.deepEqual(file, { answer: 42 });
+      assert.deepEqual(Object.keys(file), [ 'answer' ]);
+      assert.equal(file.answer(), 42);
       assert.deepEqual(extra.globalBailouts, []);
       assert.deepEqual(extra.moduleBailouts, []);
       assert.deepEqual(extra.removed, [

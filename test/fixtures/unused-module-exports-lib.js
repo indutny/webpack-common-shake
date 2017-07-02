@@ -1,8 +1,10 @@
 'use strict';
 
+let fn;
+
 module.exports = {
-  answer: 42,
-  question: () => { throw new Error(); },
+  answer: () => fn(),
+  question: fn = () => 42,
   get getter() {},
   set setter(value) {}
 };
