@@ -75,6 +75,30 @@ describe('webpack-common-shake', () => {
     });
   });
 
+  it('should remove unused exports of `unused-module-exports.js`', (cb) => {
+    compile('unused-module-exports.js', (err, file, extra) => {
+      assert.ok(!err);
+      assert.deepEqual(file, { answer: 42 });
+      assert.deepEqual(extra.globalBailouts, []);
+      assert.deepEqual(extra.moduleBailouts, []);
+      assert.deepEqual(extra.removed, [
+        {
+          name: 'question',
+          resource: path.join(FIXTURES_DIR, 'unused-module-exports-lib.js')
+        },
+        {
+          name: 'getter',
+          resource: path.join(FIXTURES_DIR, 'unused-module-exports-lib.js')
+        },
+        {
+          name: 'setter',
+          resource: path.join(FIXTURES_DIR, 'unused-module-exports-lib.js')
+        }
+      ]);
+      cb();
+    });
+  });
+
   it('should require ESM module', (cb) => {
     compile('require-esm.js', (err, file, extra) => {
       assert.ok(!err);
