@@ -67,10 +67,20 @@ describe('webpack-common-shake', () => {
       assert.deepEqual(file, { answer: 42 });
       assert.deepEqual(extra.globalBailouts, []);
       assert.deepEqual(extra.moduleBailouts, []);
-      assert.deepEqual(extra.removed, [{
-        name: 'question',
-        resource: path.join(FIXTURES_DIR, 'unused-exports-lib.js')
-      }]);
+
+      const resource = path.join(FIXTURES_DIR, 'unused-exports-lib.js');
+      assert.deepEqual(extra.removed, [
+        { name: 'binary', resource },
+        { name: 'a', resource },
+        { name: 'b', resource },
+        { name: 'c', resource },
+        { name: 'd', resource },
+        { name: 'e', resource },
+        { name: 'f', resource },
+        { name: 'preanswer', resource },
+        { name: 'postanswer', resource },
+        { name: 'question', resource }
+      ]);
       cb();
     });
   });
@@ -82,18 +92,20 @@ describe('webpack-common-shake', () => {
       assert.equal(file.answer(), 42);
       assert.deepEqual(extra.globalBailouts, []);
       assert.deepEqual(extra.moduleBailouts, []);
+
+      const resource = path.join(FIXTURES_DIR, 'unused-module-exports-lib.js');
       assert.deepEqual(extra.removed, [
         {
           name: 'question',
-          resource: path.join(FIXTURES_DIR, 'unused-module-exports-lib.js')
+          resource
         },
         {
           name: 'getter',
-          resource: path.join(FIXTURES_DIR, 'unused-module-exports-lib.js')
+          resource
         },
         {
           name: 'setter',
-          resource: path.join(FIXTURES_DIR, 'unused-module-exports-lib.js')
+          resource
         }
       ]);
       cb();
