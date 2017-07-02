@@ -8,6 +8,8 @@ Please file an [issue][0] if anything is broken.
 
 NOTE: `webpack` version 3 may be needed in order to run this.
 
+See [`common-shake`][1] for abstract bundler-independent implementation.
+
 ## Why?
 
 There are vast amount of CommonJS modules out there. Thus CommonJS Tree Shaking
@@ -105,3 +107,4 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [0]: https://github.com/indutny/webpack-common-shake/issues
+[1]: https://github.com/indutny/common-shake
