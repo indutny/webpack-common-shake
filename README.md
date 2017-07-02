@@ -63,7 +63,7 @@ Some local (partial) bailouts:
 
 * Dynamic exports `exports[Math.random()] = ...`
 * Overriding imported vars `var a = require('./a'); a.lib; a = require('./b')`
-* Using `require` in unknown way `console.log(require('./lib')`
+* Using `require` in unknown way `console.log(require('./lib'))`
 * Destructuring `require` dynamically `{ [prop]: name } = require('./a')`
 
 Some global (full) bailouts:
