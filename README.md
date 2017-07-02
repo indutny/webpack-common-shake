@@ -6,7 +6,7 @@
 
 Please file an [issue][0] if anything is broken.
 
-NOTE: `webpack` version 3 may be needed in order to run this.
+NOTE: [`webpack`][2] version 3 may be needed in order to run this.
 
 See [`common-shake`][1] for abstract bundler-independent implementation.
 
@@ -108,3 +108,4 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [0]: https://github.com/indutny/webpack-common-shake/issues
 [1]: https://github.com/indutny/common-shake
+[2]: https://webpack.github.io/
