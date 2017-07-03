@@ -13,7 +13,12 @@ const FIXTURES_DIR = path.join(__dirname, 'fixtures');
 const TMP_DIR = path.join(__dirname, 'tmp');
 
 describe('webpack-common-shake', () => {
-  function compile(file, callback) {
+  function compile(file, options, callback) {
+    if (typeof options === 'function') {
+      callback = options;
+      options = {};
+    }
+
     const fs = new MemoryFS();
     const removed = [];
     let globalBailouts = [];
@@ -28,7 +33,7 @@ describe('webpack-common-shake', () => {
         filename: 'out.js'
       },
       plugins: [
-        new CommonShakePlugin({
+        new CommonShakePlugin(Object.assign({}, options, {
           onExportDelete: (resource, name) => removed.push({ resource, name }),
           onGlobalBailout: (bailouts) => {
             globalBailouts = globalBailouts.concat(bailouts);
@@ -36,7 +41,7 @@ describe('webpack-common-shake', () => {
           onModuleBailout: (module, bailout) => {
             moduleBailouts.push({ resource: module.resource, bailout });
           }
-        })
+        }))
       ]
     }, (err) => {
       if (err)
@@ -150,6 +155,18 @@ describe('webpack-common-shake', () => {
       } ]);
       assert.deepEqual(extra.moduleBailouts, []);
       assert.deepEqual(extra.removed, []);
+      cb();
+    });
+  });
+
+  it('should call `onGraph` callback', (cb) => {
+    let graph = null;
+
+    compile('root.js', {
+      onGraph: dot => graph = dot,
+    }, (err) => {
+      assert.ok(!err);
+      assert.equal(typeof graph, 'string');
       cb();
     });
   });
