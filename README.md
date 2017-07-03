@@ -81,6 +81,17 @@ const plugin = new ShakePlugin({
 });
 ```
 
+## Graph
+
+For debugging and inspection purposes a graph in [dot][3] format may be
+obtained using `onGraph` option:
+
+```js
+const plugin = new ShakePlugin({
+  onGraph: (graph) => { ... }
+});
+```
+
 ## LICENSE
 
 This software is licensed under the MIT License.
@@ -109,3 +120,4 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 [0]: https://github.com/indutny/webpack-common-shake/issues
 [1]: https://github.com/indutny/common-shake
 [2]: https://webpack.github.io/
+[3]: http://www.graphviz.org/content/dot-language
