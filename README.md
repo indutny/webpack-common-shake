@@ -52,6 +52,11 @@ module.exports = [{
 }];
 ```
 
+## Demonstration
+
+See [webpack-common-shake-demo][4] for size comparison of output with and
+without this plugin.
+
 ## Limitations
 
 Although, generally this module works and helps removing unused code from the
@@ -121,3 +126,4 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 [1]: https://github.com/indutny/common-shake
 [2]: https://webpack.github.io/
 [3]: http://www.graphviz.org/content/dot-language
+[4]: https://github.com/indutny/webpack-common-shake-demo
