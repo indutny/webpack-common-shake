@@ -68,11 +68,11 @@ Some local (partial) bailouts:
 * Overriding imported vars `var a = require('./a'); a.lib; a = require('./b')`
 * Using `require` in unknown way `console.log(require('./lib'))`
 * Destructuring `require` dynamically `{ [prop]: name } = require('./a')`
+* Dynamic import `var fn = require('./lib')[Math.random()]`
 
 Some global (full) bailouts:
 
 * Dynamic use of require `require(Math.random())`
-* Dynamic import `var fn = require('./lib')[Math.random()]`
 
 This plugin will print some webpack warnings. In any case, bailouts may be
 obtained programmatically too:
