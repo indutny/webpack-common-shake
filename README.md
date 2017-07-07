@@ -10,7 +10,7 @@ See [common-shake][1] for abstract bundler-independent implementation.
 
 _NOTE: [webpack][2] version 3 may be needed in order to run this._
 
-_NOTE: Logo is modified version of [webpack's logo][5]_
+_NOTE: Logo is a modified version of [webpack's logo][5]_
 
 ## Why?
 
