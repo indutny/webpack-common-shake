@@ -10,6 +10,8 @@ See [common-shake][1] for abstract bundler-independent implementation.
 
 _NOTE: [webpack][2] version 3 may be needed in order to run this._
 
+_NOTE: Logo is modified version of [webpack's logo][5]_
+
 ## Why?
 
 There are vast amount of CommonJS modules out there. Thus CommonJS Tree Shaking
@@ -127,3 +129,4 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 [2]: https://webpack.github.io/
 [3]: http://www.graphviz.org/content/dot-language
 [4]: https://github.com/indutny/webpack-common-shake-demo
+[5]: https://github.com/webpack/media/issues/12
