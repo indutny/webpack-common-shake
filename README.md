@@ -2,6 +2,8 @@
 [![NPM version](https://badge.fury.io/js/webpack-common-shake.svg)](http://badge.fury.io/js/webpack-common-shake)
 [![Build Status](https://secure.travis-ci.org/indutny/webpack-common-shake.svg)](http://travis-ci.org/indutny/webpack-common-shake)
 
+![Fancy shaking logo](https://github.com/indutny/webpack-common-shake/blob/master/logo/logo.gif)
+
 Please file an [issue][0] if anything is broken.
 
 See [common-shake][1] for abstract bundler-independent implementation.

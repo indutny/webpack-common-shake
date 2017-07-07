@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @keyframes shake {
+        5%, 15% {
+          transform: translate3d(-8px, 0, 0);
+        }
+
+        10%, 20% {
+          transform: translate3d(8px, 0, 0);
+        }
+
+        35% {
+          transform: translate3d(0px, 0, 0);
+        }
+      }
+
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      #logo {
+        margin-top: 32px;
+        display: inline-block;
+        border: 1px solid black;
+        font-family: Optima;
+        font-size: 320px;
+        color: rgba(144,213,249,1);
+        height: 600px;
+      }
+
+      #logo img {
+        animation: 0.9s linear 0.5s infinite shake;
+        vertical-align:middle
+      }
+
+      #logo span {
+        position: relative;
+        top: 15px;
+      }
+
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section id=logo>
+      <span>{</span><img id=wp src="webpack-logo.png"/><span>}</span>
+    </section>
+  </body>
+</html>
