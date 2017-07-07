@@ -4,7 +4,8 @@
   "description": "CommonJS Tree Shake Plugin for Webpack",
   "main": "lib/shake.js",
   "scripts": {
-    "test": "mocha --reporter=spec test/*-test.js"
+    "test": "mocha --reporter=spec test/*-test.js && npm run lint",
+    "lint": "eslint lib/*.js lib/**/*.js test/*js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "webpack-sources": "^1.0.1"
   },
   "devDependencies": {
+    "eslint": "^4.1.1",
     "memory-fs": "^0.4.1",
     "mocha": "^3.4.2"
   }
