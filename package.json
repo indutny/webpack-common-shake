@@ -28,7 +28,7 @@
   "homepage": "https://github.com/indutny/webpack-common-shake#readme",
   "dependencies": {
     "acorn": "^5.0.3",
-    "common-shake": "^1.5.1",
+    "common-shake": "^2.0.0",
     "webpack": "^3.1.0",
     "webpack-sources": "^1.0.1"
   },
