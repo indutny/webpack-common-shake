@@ -59,6 +59,23 @@ module.exports = [{
 See [webpack-common-shake-demo][4] for size comparison of output with and
 without this plugin.
 
+## Options
+
+Plugin constructor accepts `options` object which may have following properties:
+
+```js
+const plugin = new ShakePlugin({
+  warnings: true /* default */,
+
+  // Invoked on every deleted unused property
+  onExportDelete: (resource, property) => {},
+
+  // See `Limitations` section for description
+  onModuleBailout: (module, bailouts) => { ... },
+  onGlobalBailout: (bailouts) => { ... }
+});
+```
+
 ## Limitations
 
 Although, generally this module works and helps removing unused code from the
