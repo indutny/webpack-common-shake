@@ -65,7 +65,10 @@ Plugin constructor accepts `options` object which may have following properties:
 
 ```js
 const plugin = new ShakePlugin({
-  warnings: true /* default */,
+  warnings: {
+    global: true,
+    module: false
+  } /* default */,
 
   // Invoked on every deleted unused property
   onExportDelete: (resource, property) => {},
