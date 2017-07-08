@@ -67,6 +67,14 @@ describe('webpack-common-shake', () => {
     });
   });
 
+  it('should compile `joint.js`', (cb) => {
+    compile('joint.js', (err, file) => {
+      assert.ok(!err);
+      assert.deepEqual(file, { a: 1, b: 2 });
+      cb();
+    });
+  });
+
   it('should remove unused exports of `unused-exports.js`', (cb) => {
     compile('unused-exports.js', (err, file, extra) => {
       assert.ok(!err);
