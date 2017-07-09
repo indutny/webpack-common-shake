@@ -27,13 +27,13 @@
   },
   "homepage": "https://github.com/indutny/webpack-common-shake#readme",
   "dependencies": {
-    "acorn": "^5.0.3",
-    "common-shake": "^2.0.1",
+    "acorn": "^5.1.1",
+    "common-shake": "^2.0.2",
     "webpack": "^3.1.0",
     "webpack-sources": "^1.0.1"
   },
   "devDependencies": {
-    "eslint": "^4.1.1",
+    "eslint": "^4.2.0",
     "memory-fs": "^0.4.1",
     "mocha": "^3.4.2"
   }
