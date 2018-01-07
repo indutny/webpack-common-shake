@@ -29,12 +29,15 @@
   "dependencies": {
     "acorn": "^5.2.1",
     "common-shake": "^2.1.0",
-    "webpack": "^3.8.1",
     "webpack-sources": "^1.0.2"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
     "memory-fs": "^0.4.1",
-    "mocha": "^3.5.3"
+    "mocha": "^3.5.3",
+    "webpack": "^3.8.1"
+  },
+  "peerDependencies": {
+    "webpack": "^3.8.1"
   }
 }
