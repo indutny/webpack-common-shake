@@ -25,16 +25,13 @@ describe('webpack-common-shake', () => {
     let globalBailouts = [];
     const moduleBailouts = [];
 
-    const fixturePath = path.join(FIXTURES_DIR, file);
-    const input = `emitResult(require(${JSON.stringify(fixturePath)}))`;
-    const entry = path.join(TMP_DIR, 'in.js');
-    require('fs').writeFileSync(entry, input);
-
     const compiler = webpack({
       cache: false,
       bail: true,
-      entry: entry,
+      entry: path.join(FIXTURES_DIR, file),
       output: {
+        library: '$shakeResult',
+        libraryTarget: 'window',
         path: TMP_DIR,
         filename: 'out.js'
       },
@@ -54,9 +51,7 @@ describe('webpack-common-shake', () => {
         return callback(err);
 
       const out = fs.readFileSync(path.join(TMP_DIR, 'out.js')).toString();
-      let result;
-      run(out, { emitResult(r) { result = r; }});
-      callback(null, result, {
+      callback(null, run(out, { window: {}, console: console }), {
         removed,
         globalBailouts,
         moduleBailouts
