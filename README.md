@@ -8,7 +8,8 @@ Please file an [issue][0] if anything is broken.
 
 See [common-shake][1] for abstract bundler-independent implementation.
 
-_NOTE: [webpack][2] version 3 may be needed in order to run this._
+_NOTE: [webpack][2] version 4 may be needed in order to run this._
+_If you're using webpack 3, please use `webpack-common-shake@1.x`._
 
 _NOTE: Logo is a modified version of [webpack's logo][5]_
 
