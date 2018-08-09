@@ -30,6 +30,8 @@ describe('webpack-common-shake', () => {
       bail: true,
       entry: path.join(FIXTURES_DIR, file),
       output: {
+        library: '$shakeResult',
+        libraryTarget: 'window',
         path: TMP_DIR,
         filename: 'out.js'
       },
@@ -49,7 +51,7 @@ describe('webpack-common-shake', () => {
         return callback(err);
 
       const out = fs.readFileSync(path.join(TMP_DIR, 'out.js')).toString();
-      callback(null, run(out.toString()), {
+      callback(null, run(out, { window: {}, console: console }), {
         removed,
         globalBailouts,
         moduleBailouts

@@ -29,8 +29,8 @@
   "dependencies": {
     "acorn": "^5.2.1",
     "common-shake": "^2.1.0",
-    "webpack": "^3.8.1",
-    "webpack-sources": "^1.0.2"
+    "webpack": "^4.16.5",
+    "webpack-sources": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
