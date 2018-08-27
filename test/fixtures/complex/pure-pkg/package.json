@@ -1,0 +1,6 @@
+{
+  "name": "pure-pkg",
+  "module": "./index.js",
+  "sideEffects": false,
+  "version": "1.0.20"
+}
