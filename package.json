@@ -35,6 +35,6 @@
   "devDependencies": {
     "eslint": "^4.11.0",
     "memory-fs": "^0.4.1",
-    "mocha": "^3.5.3"
+    "mocha": "^10.2.0"
   }
 }
